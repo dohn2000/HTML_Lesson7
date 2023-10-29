@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body>
+    <div class="panel">
+        <h2>Purchase Order Form</h2>
+        <div style="panel_top">
+            <fieldset>
+                <legend>Product Infomation</legend>
+                <table>
+                    <tr>
+                        <th>Product:</th>
+                        <td>
+                        <select name="productID" id="productID" onchange="selectproductprice()" >
+                            <option value="Select">Select</option>
+                            <option value="ComfortSleeper" >Comfort Sleeper</option>
+                            <option value="MorganKidsBed">Morgan Kids Bed</option>
+                            <option value="EntertainmentCabinet">Entertainment Cabinet</option>
+                        </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Unit Price($):</th>
+                        <td><input type="text" value="0" disabled name="Unit_Price" id="Unit_Price"></td>
+                    </tr>
+                    <tr>
+                        <th>Quantity:</th>
+                        <td><input type="text" value=""  onkeyup="updateQuantity()" name="QuantityT" id="QuantityT"></td>
+                    </tr>
+                    <tr>
+                        <th>Total Price ($):</th>
+                        <td><input type="number" value="0" disabled name="Total_Price" id="Total_Price"></td>
+                    </tr>
+                </table>
+            </fieldset>
+        </div>
+        <div>
+            <fieldset>
+                <legend>Shipping Information</legend>
+                <table>
+                    <tr>
+                        <th>Full Name:</th>
+                        <td><input type="text"></td>
+                    </tr>
+                    <tr>
+                        <th>Shipping Address:</th>
+                        <td><textarea name="" id="" style="width: 220px;height: 40px; overflow-y:scroll;"></textarea></td>
+                    </tr>
+                    <tr>
+                        <th>Credit Card:</th>
+                        <td>
+                            <select name="Credit Card" id="Credit Card">
+                                <option value="Credit Card">Select</option>
+                                <option value="Credit Card">VISA</option>
+                                <option value="Credit Card">Master Card</option>
+                                <option value="Credit Card">American Express</option>
+                            </select>
+                    </td>
+                    </tr>
+                    <tr>
+                        <th>Credit card Number</th>
+                        <td>
+                            <input type="text" pattern="[0-9]{4}" style="width: 50px;">
+                            <input type="text" pattern="[0-9]{4}" style="width: 50px;">
+                            <input type="text" pattern="[0-9]{4}" style="width: 50px;">
+                            <input type="text" pattern="[0-9]{4}" style="width: 50px;">
+                        </td>
+                    </tr>
+                </table>
+            </fieldset>
+            <div class="panel_bot">
+                <button>Submit</button>
+                <button>Reset</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function selectproductprice(){
+            var Product = document.getElementById("productID").value;
+            if(Product == "Select"){
+                document.getElementById("Unit_Price").value ="0"
+            }else if(Product == "ComfortSleeper"){
+                document.getElementById("Unit_Price").value ="650"
+            }else if(Product == "MorganKidsBed"){
+                document.getElementById("Unit_Price").value ="975"
+            }else if(Product == "EntertainmentCabinet"){
+                document.getElementById("Unit_Price").value ="480"
+            }   
+        }
+        function updateQuantity(){
+            var QuantityTag = document.getElementById("QuantityT").value;
+            var UnitPrice = document.getElementById("Unit_Price").value;
+            document.getElementById("Total_Price").value = QuantityTag * UnitPrice;
+        }
+        
+    </script>
+</body>
+</html>

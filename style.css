@@ -1,0 +1,56 @@
+ 
+.panel{
+    border: 1px solid black;
+    width: 500px;
+    margin: 0 auto;
+    margin-top: 30px;
+    background-color: rgb(220,242,229);
+    
+}
+table{
+    margin: 20px;
+    margin-top: 0px;
+}
+legend{
+    margin: 20px;
+    margin-bottom: 0px;
+    color: rgb(50,93,191);
+}
+th{
+    text-align: left;
+    font-weight: normal;
+    background-color: rgb(236, 241, 243);
+    width: 25%;
+}
+td{
+    background-color: rgb(236, 241, 243);
+    width: 50%;
+}
+table, th, td{
+    border: 1px solid;
+    border-color: rgb(12, 148, 216);
+}
+h2{
+    background-color: rgb(202,220,235);
+    color: rgb(16,82,137);
+    width: fit-content;
+    border: 1px solid black;
+    padding: 5px;
+    margin: 20px;
+}
+fieldset {
+	border: solid 1px silver;
+	border-radius: 4px;
+    margin: 15px;
+}
+.panel_bot{
+    border: 1px black solid;
+    text-align: center;
+    margin: 15px;
+    padding: 5px;
+    background-color: rgb(236, 241, 243);
+}
+button{
+    width: 60px;
+    
+}
